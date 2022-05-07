@@ -1,10 +1,7 @@
 import classes from "./ExpenseItem.module.css";
 import React from "react";
 
-export default function ExpenseItem(props) {
-  let date = "August 25th";
-  let title = "Birthday Gift";
-  let amount = 300;
+export default function ExpenseItem({date, title, amount}) {
   return (
     <div className={classes.expense_item}>
       <div>{date}</div>

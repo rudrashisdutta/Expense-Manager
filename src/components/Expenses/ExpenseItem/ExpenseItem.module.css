@@ -8,6 +8,9 @@
   border-radius: 12px;
   background-color: #4b4b4b;
 }
+.expense_item:hover {
+  background-color: #585656;
+}
 
 .expense_item__description {
   display: flex;
