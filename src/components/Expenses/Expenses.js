@@ -1,10 +1,11 @@
 import classes from "./Expenses.module.css";
 import ExpenseItem from "./expense_item/ExpenseItem";
 import React from "react";
+import Card from "../card/Card";
 
 export default function Expenses({ expenses }) {
   return (
-    <div className={classes.expenses}>
+    <Card className={classes.expenses}>
       {expenses.map((expense) => {
         return (
           <ExpenseItem
@@ -14,6 +15,6 @@ export default function Expenses({ expenses }) {
           />
         );
       })}
-    </div>
+    </Card>
   );
 }
