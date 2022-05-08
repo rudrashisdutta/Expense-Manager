@@ -1,5 +1,5 @@
 import classes from "./Expenses.module.css";
-import ExpenseItem from "./ExpenseItem/ExpenseItem";
+import ExpenseItem from "./expense_item/ExpenseItem";
 import React from "react";
 
 export default function Expenses({ expenses }) {

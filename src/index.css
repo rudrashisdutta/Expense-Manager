@@ -8,6 +8,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
+  -webkit-user-select: none;
+}
+
+::-webkit-scrollbar {
+  background-color: #3f3f3f00;
+  width: .8rem;
+  margin: .8rem;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: .2rem;
+  background-color: #00000040;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: .3rem;
+  background-color: #00000074;
+}
+::-webkit-scrollbar-thumb:active {
+  border-radius: 2rem;
+  background-color: #000000c1;
+}
+::-webkit-scrollbar-button {
+  display: none;
 }
 
 code {
