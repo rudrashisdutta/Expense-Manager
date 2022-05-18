@@ -1,7 +1,7 @@
 import classes from "./ExpenseForm.module.css";
 import React from "react";
 
-export default function ExpenseForm(props) {
+export default function ExpenseForm({ setShow }) {
   return (
     <form>
       <div className={classes.new_expense__controls}>
@@ -19,7 +19,9 @@ export default function ExpenseForm(props) {
         </div>
       </div>
       <div className={classes.new_expense__actions}>
-        <button type={"submit"}>Add Expense</button>
+        <button type={"submit"} onClick={(e) => setShow(false)}>
+          Add Expense
+        </button>
       </div>
     </form>
   );
