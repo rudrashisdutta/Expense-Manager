@@ -6,7 +6,9 @@ export default function NewExpense(props) {
   const [showExpenseForm, setShowExpenseForm] = useState(false);
   const text = ["NEW", "CLOSE"];
   const toggle = (e) => {
-    setShowExpenseForm(!showExpenseForm);
+    setShowExpenseForm((previousState) => {
+      return !previousState;
+    });
   };
   return (
     <div className={classes.new_expense}>

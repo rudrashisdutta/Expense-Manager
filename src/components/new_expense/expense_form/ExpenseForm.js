@@ -2,18 +2,35 @@ import classes from "./ExpenseForm.module.css";
 import React, { useState } from "react";
 
 export default function ExpenseForm({ setShow, className }) {
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
-  const [date, setDate] = useState("");
+  const [input, setInput] = useState({
+    title: "",
+    amount: "",
+    date: "",
+  });
 
   const onTitleChange = (e) => {
-    setTitle(e.target.value);
+    setInput((previousState) => {
+      return {
+        ...previousState,
+        title: e.target.value,
+      };
+    });
   };
   const onAmountChange = (e) => {
-    setAmount(Number(e.target.value));
+    setInput((previousState) => {
+      return {
+        ...previousState,
+        amount: Number(e.target.value),
+      };
+    });
   };
   const onDateChange = (e) => {
-    setDate(new Date(e.target.value));
+    setInput((previousState) => {
+      return {
+        ...previousState,
+        date: new Date(e.target.value),
+      };
+    });
   };
 
   return (
