@@ -1,7 +1,7 @@
 import classes from "./ExpenseForm.module.css";
 import React, { useState } from "react";
 
-export default function ExpenseForm({ setShow }) {
+export default function ExpenseForm({ setShow, className }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -17,7 +17,7 @@ export default function ExpenseForm({ setShow }) {
   };
 
   return (
-    <form>
+    <form className={className}>
       <div className={classes.new_expense__controls}>
         <div className={classes.new_expense__control}>
           <label>Title</label>

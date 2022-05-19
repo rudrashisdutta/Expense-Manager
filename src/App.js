@@ -39,7 +39,7 @@ function App() {
   return (
     <div>
       <div className={classes.heading}>
-        <h2>Expense Manager</h2>
+        <h2><a href="/">Expense Manager</a></h2>
       </div>
       <NewExpense />
       <Expenses expenses={expenses} />

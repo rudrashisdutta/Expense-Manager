@@ -14,3 +14,10 @@
 .heading h2:hover {
     background-color: #9e87e7;
 }
+.heading h2 a {
+    color: #40005d;
+    text-decoration: none;
+}
+.heading h2 a:active {
+    color: #40005dc4;
+}

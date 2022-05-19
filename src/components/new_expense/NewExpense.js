@@ -10,8 +10,15 @@ export default function NewExpense(props) {
   };
   return (
     <div className={classes.new_expense}>
-      <button onClick={toggle}>{showExpenseForm ? text[1] : text[0]}</button>
-      {showExpenseForm && <ExpenseForm setShow={setShowExpenseForm} />}
+      <button className={classes.toggle} onClick={toggle}>
+        {showExpenseForm ? text[1] : text[0]}
+      </button>
+      {showExpenseForm && (
+        <ExpenseForm
+          className={classes.new_expense_form}
+          setShow={setShowExpenseForm}
+        />
+      )}
     </div>
   );
 }
