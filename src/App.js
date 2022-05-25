@@ -1,10 +1,11 @@
+import { useState } from "react";
 import "./App.css";
 import classes from "./App.module.css";
 import Expenses from "./components/expenses/Expenses";
 import NewExpense from "./components/new_expense/NewExpense";
 
 function App() {
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     {
       title: "Gift",
       date: new Date("2020-08-25"),
@@ -35,13 +36,21 @@ function App() {
       date: new Date("2020-08-28"),
       amount: 1350.6,
     },
-  ];
+  ]);
+  const addExpense = (expense) => {
+    console.log(expense);
+    setExpenses((previousState) => {
+      return [...previousState, expense];
+    });
+  };
   return (
     <div>
       <div className={classes.heading}>
-        <h2><a href="/">Expense Manager</a></h2>
+        <h2>
+          <a href="/">Expense Manager</a>
+        </h2>
       </div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpense} />
       <Expenses expenses={expenses} />
     </div>
   );

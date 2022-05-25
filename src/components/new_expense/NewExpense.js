@@ -2,13 +2,20 @@ import classes from "./NewExpense.module.css";
 import React, { useState } from "react";
 import ExpenseForm from "./expense_form/ExpenseForm";
 
-export default function NewExpense(props) {
+export default function NewExpense({ onAddExpense }) {
   const [showExpenseForm, setShowExpenseForm] = useState(false);
   const text = ["NEW", "CLOSE"];
   const toggle = (e) => {
     setShowExpenseForm((previousState) => {
       return !previousState;
     });
+  };
+  const saveExpense = (input) => {
+    const newExpense = {
+      ...input,
+      id: (Math.random() * Math.random()).toString(),
+    };
+    onAddExpense(newExpense);
   };
   return (
     <div className={classes.new_expense}>
@@ -19,6 +26,7 @@ export default function NewExpense(props) {
         <ExpenseForm
           className={classes.new_expense_form}
           setShow={setShowExpenseForm}
+          onSaveExpense={saveExpense}
         />
       )}
     </div>
