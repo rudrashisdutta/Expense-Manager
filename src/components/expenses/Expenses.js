@@ -18,11 +18,14 @@ export default function Expenses({ expenses }) {
       />
       {expenses.map((expense) => {
         return (
-          <ExpenseItem
-            title={expense.title}
-            date={expense.date}
-            amount={expense.amount}
-          />
+          expense.date.getFullYear() === filter && (
+            <ExpenseItem
+              key={expense.key}
+              title={expense.title}
+              date={expense.date}
+              amount={expense.amount}
+            />
+          )
         );
       })}
     </Card>
