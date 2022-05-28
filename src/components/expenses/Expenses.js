@@ -5,14 +5,17 @@ import Card from "../card/Card";
 import ExpensesFilter from "./expenses_filter/ExpensesFilter";
 
 export default function Expenses({ expenses }) {
-  const [filter, setFilter] = useState(2022);
+  const [filter, setFilter] = useState(2019);
   const addExpensesFilter = (filter) => {
     console.log(filter);
     setFilter(filter);
   };
   return (
     <Card className={classes.expenses}>
-      <ExpensesFilter onAddExpensesFilter={addExpensesFilter} />
+      <ExpensesFilter
+        selected={filter}
+        onAddExpensesFilter={addExpensesFilter}
+      />
       {expenses.map((expense) => {
         return (
           <ExpenseItem
