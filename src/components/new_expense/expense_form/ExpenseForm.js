@@ -1,7 +1,7 @@
 import classes from "./ExpenseForm.module.css";
 import React, { useState } from "react";
 
-export default function ExpenseForm({ setShow, className, onSaveExpense }) {
+export default function ExpenseForm({ toggle, className, onSaveExpense }) {
   const [input, setInput] = useState({
     title: "",
     amount: "",
@@ -47,7 +47,7 @@ export default function ExpenseForm({ setShow, className, onSaveExpense }) {
       amount: "",
       date: "",
     });
-    setShow(false);
+    toggle(false);
   };
 
   return (
@@ -55,7 +55,12 @@ export default function ExpenseForm({ setShow, className, onSaveExpense }) {
       <div className={classes.new_expense__controls}>
         <div className={classes.new_expense__control}>
           <label>Title</label>
-          <input type={"text"} onChange={onTitleChange} value={input.title} />
+          <input
+            type={"text"}
+            onChange={onTitleChange}
+            value={input.title}
+            required
+          />
         </div>
         <div className={classes.new_expense__control}>
           <label>Amount</label>
@@ -65,6 +70,7 @@ export default function ExpenseForm({ setShow, className, onSaveExpense }) {
             step={"0.01"}
             onChange={onAmountChange}
             value={input.amount}
+            required
           />
         </div>
         <div className={classes.new_expense__control}>
@@ -75,10 +81,14 @@ export default function ExpenseForm({ setShow, className, onSaveExpense }) {
             max={"2022-12-31"}
             onChange={onDateChange}
             value={(input.date !== "" && convert(input.date)) || ""}
+            required
           />
         </div>
       </div>
       <div className={classes.new_expense__actions}>
+        <button type={"button"} onClick={(e) => toggle(false)}>
+          Cancel
+        </button>
         <button type={"submit"}>Add Expense</button>
       </div>
     </form>
