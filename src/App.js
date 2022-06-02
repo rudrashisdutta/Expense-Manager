@@ -8,7 +8,7 @@ const INITIAL_DATA = [
   {
     key: "e1",
     title: "Gift",
-    date: new Date("2020-08-25"),
+    date: new Date("2022-08-25"),
     amount: 300.0,
   },
   {
@@ -32,7 +32,7 @@ const INITIAL_DATA = [
   {
     key: "e5",
     title: "Mobile Phone",
-    date: new Date("2020-04-30"),
+    date: new Date("2021-04-30"),
     amount: 500.0,
   },
   {
