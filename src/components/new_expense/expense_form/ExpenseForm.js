@@ -26,7 +26,7 @@ export default function ExpenseForm({ toggle, className, onSaveExpense }) {
     setInput((previousState) => {
       return {
         ...previousState,
-        amount: Number(e.target.value),
+        amount: +e.target.value,
       };
     });
   };

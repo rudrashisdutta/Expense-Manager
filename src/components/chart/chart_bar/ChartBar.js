@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./ChartBar.module.css";
 
-function ChartBar({ key, value, maxValue, label }) {
+function ChartBar({ value, maxValue, label }) {
   let barFillHeight = "0%";
   if (maxValue > 0) {
     barFillHeight = Math.round((value / maxValue) * 100) + "%";
@@ -15,6 +15,7 @@ function ChartBar({ key, value, maxValue, label }) {
         ></div>
       </div>
       <div className={classes.chart_bar__label}>{label}</div>
+      <div className={classes.chart_bar__label}>{value + "$"}</div>
     </div>
   );
 }
