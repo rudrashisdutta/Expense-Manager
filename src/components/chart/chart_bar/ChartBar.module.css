@@ -5,10 +5,9 @@
   align-items: center;
 }
 .chart_bar {
+  margin: .25rem auto;
   height: 100%;
   width: 1rem;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 

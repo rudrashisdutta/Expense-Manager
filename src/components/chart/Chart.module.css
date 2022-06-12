@@ -3,7 +3,8 @@
   border-radius: 12px;
   background-color: #f8dfff;
   text-align: center;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: 1;
   height: 10rem;
 }
