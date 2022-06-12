@@ -1,5 +1,12 @@
+.chart_bar___container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .chart_bar {
   height: 100%;
+  width: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +32,6 @@
 
 .chart_bar__label {
   font-weight: bold;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   text-align: center;
 }
